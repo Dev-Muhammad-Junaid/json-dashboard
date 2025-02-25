@@ -28,7 +28,7 @@ A modern, interactive JSON data processing application built with Next.js that m
 
 1. Clone the repository
 ```bash
-git clone https://github.com/yourusername/json-dashboard.git
+git clone https://github.com/Dev-Muhammad-Junaid/json-dashboard.git
 cd json-dashboard
 ```
 
