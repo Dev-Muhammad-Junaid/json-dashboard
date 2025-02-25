@@ -83,16 +83,24 @@ export default function Sidebar({ activePath = '/' }: { activePath?: string }) {
                 Main Menu
               </div>
             )}
-            {menuItems.map((item) => (
-              <SidebarItem
-                key={item.path}
-                icon={item.icon}
-                label={item.label}
-                path={item.path}
-                active={activePath === item.path}
-                collapsed={collapsed}
-              />
-            ))}
+            {menuItems.map((item) => {
+              // Check if current path starts with menu item path for active state
+              const isActive = 
+                item.path === '/' 
+                  ? activePath === '/' 
+                  : activePath.startsWith(item.path);
+                  
+              return (
+                <SidebarItem
+                  key={item.path}
+                  icon={item.icon}
+                  label={item.label}
+                  path={item.path}
+                  active={isActive}
+                  collapsed={collapsed}
+                />
+              );
+            })}
           </div>
         </div>
         
