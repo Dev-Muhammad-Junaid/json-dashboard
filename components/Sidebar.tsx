@@ -7,7 +7,8 @@ import {
   Home, 
   HelpCircle,
   ChevronLeft,
-  ChevronRight
+  ChevronRight,
+  BarChart3
 } from 'lucide-react';
 
 interface SidebarItemProps {
@@ -48,6 +49,7 @@ export default function Sidebar({ activePath = '/' }: { activePath?: string }) {
   const menuItems = [
     { icon: <Home size={18} />, label: 'Dashboard', path: '/' },
     { icon: <FileJson size={18} />, label: 'JSON Data', path: '/json' },
+    { icon: <BarChart3 size={18} />, label: 'Performance', path: '/performance' },
   ];
 
   return (

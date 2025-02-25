@@ -6,15 +6,17 @@ import Sidebar from './Sidebar';
 
 interface DashboardLayoutProps {
   children: React.ReactNode;
+  activePath?: string;
 }
 
-export default function DashboardLayout({ children }: DashboardLayoutProps) {
+export default function DashboardLayout({ children, activePath }: DashboardLayoutProps) {
   const pathname = usePathname();
+  const currentPath = activePath || pathname;
   
   return (
     <div className="flex h-screen bg-gradient-to-br from-gray-50 to-gray-100">
       {/* Sidebar */}
-      <Sidebar activePath={pathname} />
+      <Sidebar activePath={currentPath} />
       
       {/* Main Content */}
       <div className="flex flex-col flex-1 overflow-hidden">
